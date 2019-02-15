@@ -30,9 +30,11 @@ humans = [
 print("Starts with D:")
 a = []
 
-for n in humans:
-    if n.name.startswith("D"):
-        a.append(n.name)
+# for n in humans:
+#     if n.name.startswith("D"):
+#         a.append(n.name)
+
+a = [h.name for h in humans if h.name.startswith("D")]
 
 print(a)
 
