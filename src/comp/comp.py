@@ -43,9 +43,11 @@ print(a)
 print("Ends with e:")
 b = []
 
-for n in humans:
-    if n.name.endswith("e"):
-        b.append(n.name)
+# for n in humans:
+#     if n.name.endswith("e"):
+#         b.append(n.name)
+
+b = [h.name for h in humans if h.name.endswith("e")]
 
 print(b)
 
@@ -54,9 +56,12 @@ print(b)
 print("Starts between C and G, inclusive:")
 c = []
 
-for n in humans:
-    if n.name.startswith(("C", "D", "E", "F", "G")):
-        c.append(n.name)
+# for n in humans:
+#     if n.name.startswith(("C", "D", "E", "F", "G")):
+#         c.append(n.name)
+
+
+c = [h.name for h in humans if h.name.startswith(("C", "D", "E", "F", "G"))]
 
 print(c)
 
@@ -64,10 +69,12 @@ print(c)
 print("Ages plus 10:")
 d = []
 
-for n in humans:
-    older = Human(n.name, n.age)
-    older.age = n.age + 10
-    d.append(older.age)
+# for n in humans:
+#     older = Human(n.name, n.age)
+#     older.age = n.age + 10
+#     d.append(older.age)
+
+d = [h.age + 10 for h in humans]
 
 print(d)
 
@@ -76,9 +83,11 @@ print(d)
 print("Name hyphen age:")
 e = []
 
-for n in humans:
-    nameAge = f"{n.name}-{n.age}"
-    e.append(nameAge)
+# for n in humans:
+#     nameAge = f"{n.name}-{n.age}"
+#     e.append(nameAge)
+
+e = [f"{h.name}-{h.age}" for h in humans]
 
 print(e)
 
@@ -88,12 +97,13 @@ print(e)
 print("Names and ages between 27 and 32:")
 f = []
 
-for n in humans:
+# for n in humans:
 
-    if 26 < n.age < 33:
-        nameAge = (n.name, n.age)
-        f.append(nameAge)
+#     if 26 < n.age < 33:
+#         nameAge = (n.name, n.age)
+#         f.append(nameAge)
 
+f = [(h.name, h.age) for h in humans if 26 < h.age < 33]
 
 print(f)
 
@@ -103,11 +113,13 @@ print(f)
 print("All names capitalized:")
 g = []
 
-for n in humans:
-    cap = Human(n.name, n.age)
-    cap.age = n.age + 5
-    cap.name = n.name.upper()
-    g.append(cap)
+# for n in humans:
+#     cap = Human(n.name, n.age)
+#     cap.age = n.age + 5
+#     cap.name = n.name.upper()
+#     g.append(cap)
+
+g = [Human(h.name.upper(), h.age + 5) for h in humans]
 
 print(g)
 
@@ -117,9 +129,11 @@ h = []
 
 import math
 
-for n in humans:
-    sqrroot = Human(n.name, n.age)
-    sqrroot.age = math.sqrt(n.age)
-    h.append(sqrroot.age)
+# for n in humans:
+#     sqrroot = Human(n.name, n.age)
+#     sqrroot.age = math.sqrt(n.age)
+#     h.append(sqrroot.age)
+
+h = [math.sqrt(h.age) for h in humans]
 
 print(h)
